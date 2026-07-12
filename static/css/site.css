@@ -56,15 +56,21 @@ h1 span { color: var(--signal); }
 .features p { margin: 0 0 70px; color: var(--signal); font: 400 10px/1 var(--mono); letter-spacing: .06em; }
 h2 { max-width: 185px; margin: 0; font-size: 23px; font-weight: 500; line-height: 1.1; letter-spacing: -0.035em; }
 .features span { display: block; margin-top: 14px; color: var(--muted); font-size: 15px; line-height: 1.45; }
-.install-page { min-height: calc(100vh - 177px); padding-top: clamp(92px, 13vw, 152px); padding-bottom: clamp(92px, 12vw, 140px); }
+.install-page { min-height: calc(100vh - 177px); padding-top: clamp(104px, 13vw, 152px); padding-bottom: clamp(92px, 12vw, 140px); }
 .install-intro { max-width: 650px; }
 .install-intro p { max-width: 460px; margin: 31px 0 0; color: var(--soft); font-size: 19px; line-height: 1.5; }
-.install-step { width: min(100%, 760px); margin-top: 64px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.install-step { width: min(100%, 760px); margin-top: 32px; border: 1px solid var(--rule); background: rgb(17 19 24 / .4); }
 .install-step > p { margin: 0; padding: 12px 16px; border-bottom: 1px solid var(--rule); color: var(--muted); font: 400 10px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
 .install-step pre { margin: 0; overflow-x: auto; padding: 19px 16px; background: linear-gradient(135deg, var(--surface-raised), var(--surface)); }
 .install-step code { color: var(--soft); font: 400 14px/1.4 var(--mono); white-space: nowrap; }
 .install-step code span { color: var(--signal); }
-.install-next { margin-top: 32px; }
+.install-intro + .install-step { position: relative; margin-top: 58px; border-color: var(--signal-dim); box-shadow: 0 18px 40px rgb(0 0 0 / .14); }
+.install-intro + .install-step::before { position: absolute; inset: -1px auto -1px -1px; width: 3px; background: var(--signal); content: ""; pointer-events: none; }
+.install-intro + .install-step > p { color: var(--signal); }
+.install-intro + .install-step pre { padding: 23px 20px; background: linear-gradient(135deg, rgb(31 36 49), var(--surface)); }
+.install-intro + .install-step code { font-size: 16px; }
+.install-next { max-width: 680px; }
+.install-next > p { color: var(--muted); }
 .page { min-height: calc(100vh - 177px); padding-top: 106px; padding-bottom: 106px; }
 .page h1 { font-size: clamp(44px, 6vw, 72px); }
 .empty { margin-top: 32px; color: var(--muted); font-size: 18px; }
@@ -93,8 +99,9 @@ footer .container { display: flex; justify-content: space-between; gap: 20px; }
   .terminal-demo { margin-top: 17px; font-size: 12px; }
   .install-page { padding-top: 88px; }
   .install-intro p { font-size: 18px; }
-  .install-step { margin-top: 48px; }
-  .install-next { margin-top: 26px; }
+  .install-intro + .install-step { margin-top: 48px; }
+  .install-step { margin-top: 22px; }
+  .install-intro + .install-step pre { padding: 21px 16px; }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .features article { min-height: 210px; padding: 25px 20px !important; border-bottom: 1px solid var(--rule); }
   .features article:nth-child(2) { border-right: 0; }
