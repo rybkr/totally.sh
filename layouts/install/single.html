@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <article class="install-page container">
+    <header class="install-intro">
+      <h1>Install<br><span>Totally.</span></h1>
+      <p>Put Totally on your PATH, then start making agent costs legible.</p>
+    </header>
+    <section class="install-step" aria-labelledby="install-command-title">
+      <p id="install-command-title">Run this command</p>
+      <pre><code><span>$</span> go install github.com/rybkr/totally/cmd/totally@latest</code></pre>
+    </section>
+    <section class="install-step install-next" aria-labelledby="first-command-title">
+      <p id="first-command-title">Then run it</p>
+      <pre><code><span>$</span> totally stats --since 1w --by model</code></pre>
+    </section>
+  </article>
+{{ end }}

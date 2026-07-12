@@ -8,6 +8,10 @@ disableKinds = ["taxonomy"]
 
 [menus]
   [[menus.main]]
+    name = "install"
+    pageRef = "/install"
+    weight = 5
+  [[menus.main]]
     name = "docs"
     pageRef = "/docs"
     weight = 10
