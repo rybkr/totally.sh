@@ -1,22 +1,75 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="A local CLI for understanding agent sessions."><meta name=color-scheme content="dark"><title>Global options · Totally</title><link rel=stylesheet href=/css/site.css><script src=/js/terminal-demo.js defer></script><script src=/js/navigation.js defer></script></head><body><header class=site-header><div class="container nav"><a class=wordmark href=/ aria-label="Totally home">totally_</a>
-<button class=nav-toggle type=button aria-expanded=false aria-controls=main-navigation>
-<span class=sr-only>Toggle navigation</span>
-<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id=main-navigation aria-label="Main navigation"><a href=/install/>install</a>
-<a href=/docs/>docs</a>
-<a class="source-link github-link" href=https://github.com/rybkr/totally aria-label="Totally on GitHub"><img src=/img/github-invertocat.svg alt></a></nav></div></header><main><article class="page prose container"><p class=eyebrow>[ docs ]</p><h1>Global options</h1><p>These options apply to Totally commands unless a command&rsquo;s help text says
-otherwise.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>--agent AGENT                 Session format to discover: all or codex
-</span></span><span style=display:flex><span>--home PATH                   Agent home directory; may be repeated
-</span></span><span style=display:flex><span>--config PATH                 Configuration file path
-</span></span><span style=display:flex><span>--archived                    Include archived sessions
-</span></span><span style=display:flex><span>--since TIME, --after TIME    Include sessions at or after TIME
-</span></span><span style=display:flex><span>--until TIME, --before TIME   Include sessions at or before TIME
-</span></span><span style=display:flex><span>--format table|json           Select output format
-</span></span><span style=display:flex><span>--no-pager                    Disable terminal paging
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A local CLI for understanding agent sessions.">
+    <meta name="color-scheme" content="dark">
+    <title>Global options · Totally</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/js/terminal-demo.js" defer></script>
+    <script src="/js/navigation.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="wordmark" href="/" aria-label="Totally home">totally_</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <nav id="main-navigation" aria-label="Main navigation">
+          
+            
+              <a href="/install/">install</a>
+            
+          
+            
+              <a href="/docs/">docs</a>
+            
+          
+            
+              <a class="source-link github-link" href="https://github.com/rybkr/totally" aria-label="Totally on GitHub">
+                <img src="/img/github-invertocat.svg" alt="">
+              </a>
+            
+          
+        </nav>
+      </div>
+    </header>
+    <main>
+  <article class="page prose container">
+    <p class="eyebrow">[ docs ]</p>
+    <h1>Global options</h1>
+    <p>These options apply to Totally commands unless a command&rsquo;s help text says
+otherwise.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>--agent AGENT                 Session format to discover: all or codex
+</span></span><span style="display:flex;"><span>--home PATH                   Agent home directory; may be repeated
+</span></span><span style="display:flex;"><span>--config PATH                 Configuration file path
+</span></span><span style="display:flex;"><span>--archived                    Include archived sessions
+</span></span><span style="display:flex;"><span>--since TIME, --after TIME    Include sessions at or after TIME
+</span></span><span style="display:flex;"><span>--until TIME, --before TIME   Include sessions at or before TIME
+</span></span><span style="display:flex;"><span>--format table|json           Select output format
+</span></span><span style="display:flex;"><span>--no-pager                    Disable terminal paging
 </span></span></code></pre></div><p>Time values accept relative durations such as <code>7d</code>, calendar dates such as
 <code>2026-07-01</code>, RFC3339 timestamps, and the words <code>today</code>, <code>yesterday</code>, and
-<code>now</code>.</p><p>Use JSON when you need stable machine-readable output:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span>totally stats --since 30d --format json
-</span></span><span style=display:flex><span>totally sessions --since 7d --format json
-</span></span></code></pre></div><p>Specify <code>--home</code> more than once to include several agent homes in one report.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span>totally --home ~/.codex --home /path/to/agent-home sessions
-</span></span></code></pre></div></article></main><footer><div class=container><span>totally_</span>
-<span>Open under the <a class=license-link href="https://github.com/rybkr/totally?tab=MIT-1-ov-file#">MIT License</a></span>
-<a class=footer-github-link href=https://github.com/rybkr/totally aria-label="Totally on GitHub"><img src=/img/github-invertocat.svg alt></a></div></footer></body></html>
+<code>now</code>.</p>
+<p>Use JSON when you need stable machine-readable output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>totally stats --since 30d --format json
+</span></span><span style="display:flex;"><span>totally sessions --since 7d --format json
+</span></span></code></pre></div><p>Specify <code>--home</code> more than once to include several agent homes in one report.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>totally --home ~/.codex --home /path/to/agent-home sessions
+</span></span></code></pre></div>
+  </article>
+</main>
+    <footer>
+      <div class="container">
+        <span>totally_</span>
+        <span>Open under the <a class="license-link" href="https://github.com/rybkr/totally?tab=MIT-1-ov-file#">MIT License</a></span>
+        <a class="footer-github-link" href="https://github.com/rybkr/totally" aria-label="Totally on GitHub">
+          <img src="/img/github-invertocat.svg" alt="">
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
