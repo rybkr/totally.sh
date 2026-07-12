@@ -38,6 +38,11 @@ h1 span { color: var(--signal); }
 .install-link { display: inline-flex; gap: 12px; margin-top: 31px; padding-bottom: 5px; border-bottom: 1px solid var(--signal-dim); color: var(--signal); font: 500 12px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; transition: border-color .18s ease, color .18s ease; }
 .install-link span { color: inherit; }
 .install-link:hover { border-color: var(--signal); color: var(--white); }
+.terminal-demo { display: flex; align-items: center; min-height: 20px; margin-top: 19px; color: var(--muted); font: 400 13px/1.5 var(--mono); }
+.terminal-prompt { margin-right: 9px; color: var(--signal); }
+.terminal-command { color: var(--soft); }
+.terminal-cursor { width: 7px; height: 15px; margin-left: 3px; background: var(--signal); animation: terminal-blink 1s steps(1, end) infinite; }
+@keyframes terminal-blink { 50% { opacity: 0; } }
 .features { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .features article { position: relative; isolation: isolate; min-height: 247px; padding: 31px 24px 32px 0; border-right: 1px solid var(--rule); }
@@ -85,6 +90,7 @@ footer .container { display: flex; justify-content: space-between; gap: 20px; }
   .hero { padding-top: 88px; padding-bottom: 90px; }
   h1 { font-size: clamp(48px, 13vw, 72px); letter-spacing: -.048em; }
   .lede { font-size: 18px; }
+  .terminal-demo { margin-top: 17px; font-size: 12px; }
   .install-page { padding-top: 88px; }
   .install-intro p { font-size: 18px; }
   .install-step { margin-top: 48px; }
@@ -98,4 +104,8 @@ footer .container { display: flex; justify-content: space-between; gap: 20px; }
   .features p { margin-bottom: 44px; }
   footer .container { display: block; }
   footer span:not(:first-child), footer .footer-github-link { display: block; margin-top: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor { animation: none; }
 }
