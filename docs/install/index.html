@@ -1,83 +1,16 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A local CLI for understanding agent sessions.">
-    <meta name="color-scheme" content="dark">
-    <title>Install · Totally</title>
-    <link rel="stylesheet" href="/css/site.css">
-    <script src="/js/terminal-demo.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <a class="wordmark" href="/" aria-label="Totally home">totally_</a>
-        <nav aria-label="Main navigation">
-          
-            
-              <a href="/install/">install</a>
-            
-          
-            
-              <a href="/docs/">docs</a>
-            
-          
-            
-              <a class="source-link github-link" href="https://github.com/rybkr/totally" aria-label="Totally on GitHub">
-                <svg aria-hidden="true" viewBox="-1 -1 18 18" fill="currentColor"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 4.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg>
-              </a>
-            
-          
-        </nav>
-      </div>
-    </header>
-    <main>
-  <article class="install-page container">
-    <header class="install-intro">
-      <h1>Install<br><span>Totally.</span></h1>
-      <p>Choose an install method. Totally will be ready on your PATH.</p>
-    </header>
-    <section class="install-picker" aria-label="Installation method">
-      <div class="install-methods" role="tablist" aria-label="Choose an installation method">
-        <button class="install-method is-selected" type="button" role="tab" id="curl-tab" aria-selected="true" aria-controls="curl-panel" data-install-method="curl">
-          <span>curl</span>
-        </button>
-        <button class="install-method" type="button" role="tab" id="go-tab" aria-selected="false" aria-controls="go-panel" tabindex="-1" data-install-method="go">
-          <span>Go</span>
-        </button>
-      </div>
-      <div class="install-command" id="curl-panel" role="tabpanel" aria-labelledby="curl-tab" data-install-panel="curl">
-        <div class="command-row">
-          <pre><code><span>$</span> curl -fsSL https://totally.sh/install.sh | sh</code></pre>
-          <button class="copy-command" type="button" data-copy-command aria-label="Copy curl install command">
-            <svg class="copy-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><rect x="5.25" y="2.25" width="8.5" height="10.5" rx="1" stroke="currentColor" stroke-width="1.25"/><path d="M10.75 13.75H3.5a1.25 1.25 0 0 1-1.25-1.25V5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
-            <svg class="copied-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3 8 3.1 3.1L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-      </div>
-      <div class="install-command" id="go-panel" role="tabpanel" aria-labelledby="go-tab" data-install-panel="go" hidden>
-        <div class="command-row">
-          <pre><code><span>$</span> go install github.com/rybkr/totally/cmd/totally@latest</code></pre>
-          <button class="copy-command" type="button" data-copy-command aria-label="Copy Go install command">
-            <svg class="copy-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><rect x="5.25" y="2.25" width="8.5" height="10.5" rx="1" stroke="currentColor" stroke-width="1.25"/><path d="M10.75 13.75H3.5a1.25 1.25 0 0 1-1.25-1.25V5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
-            <svg class="copied-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3 8 3.1 3.1L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-      </div>
-      <p class="install-note" data-install-note="curl">Defaults to <code>~/.local/bin</code>. Set <code>TOTALLY_INSTALL_DIR</code> to install elsewhere, for example <code>TOTALLY_INSTALL_DIR=/usr/local/bin</code>.</p>
-    </section>
-  </article>
-  <script src="/js/install-method.js" defer></script>
-</main>
-    <footer>
-      <div class="container">
-        <span>totally_</span>
-        <span>Open under the <a class="license-link" href="https://github.com/rybkr/totally?tab=MIT-1-ov-file#">MIT License</a></span>
-        <a class="footer-github-link" href="https://github.com/rybkr/totally" aria-label="Totally on GitHub">
-          <svg aria-hidden="true" viewBox="-1 -1 18 18" fill="currentColor"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 4.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg>
-        </a>
-      </div>
-    </footer>
-  </body>
-</html>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="A local CLI for understanding agent sessions."><meta name=color-scheme content="dark"><title>Install · Totally</title><link rel=stylesheet href=/css/site.css><script src=/js/terminal-demo.js defer></script><script src=/js/navigation.js defer></script></head><body><header class=site-header><div class="container nav"><a class=wordmark href=/ aria-label="Totally home">totally_</a>
+<button class=nav-toggle type=button aria-expanded=false aria-controls=main-navigation>
+<span class=sr-only>Toggle navigation</span>
+<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav id=main-navigation aria-label="Main navigation"><a href=/install/>install</a>
+<a href=/docs/>docs</a>
+<a class="source-link github-link" href=https://github.com/rybkr/totally aria-label="Totally on GitHub"><img src=/img/github-invertocat.svg alt></a></nav></div></header><main><article class="install-page container"><header class=install-intro><h1>Install<br><span>Totally.</span></h1><p>Choose an install method. Totally will be ready on your PATH.</p></header><section class=install-picker aria-label="Installation method"><div class=install-methods role=tablist aria-label="Choose an installation method"><button class="install-method is-selected" type=button role=tab id=curl-tab aria-selected=true aria-controls=curl-panel data-install-method=curl>
+<span>curl</span>
+</button>
+<button class=install-method type=button role=tab id=go-tab aria-selected=false aria-controls=go-panel tabindex=-1 data-install-method=go>
+<span>Go</span></button></div><div class=install-command id=curl-panel role=tabpanel aria-labelledby=curl-tab data-install-panel=curl><div class=command-row><pre><code><span>$</span> curl -fsSL https://totally.sh/install.sh | sh</code></pre><button class=copy-command type=button data-copy-command aria-label="Copy curl install command">
+<svg class="copy-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><rect x="5.25" y="2.25" width="8.5" height="10.5" rx="1" stroke="currentColor" stroke-width="1.25"/><path d="M10.75 13.75H3.5A1.25 1.25.0 012.25 12.5V5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
+<svg class="copied-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3 8 3.1 3.1L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class=install-command id=go-panel role=tabpanel aria-labelledby=go-tab data-install-panel=go hidden><div class=command-row><pre><code><span>$</span> go install github.com/rybkr/totally/cmd/totally@latest</code></pre><button class=copy-command type=button data-copy-command aria-label="Copy Go install command">
+<svg class="copy-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><rect x="5.25" y="2.25" width="8.5" height="10.5" rx="1" stroke="currentColor" stroke-width="1.25"/><path d="M10.75 13.75H3.5A1.25 1.25.0 012.25 12.5V5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
+<svg class="copied-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3 8 3.1 3.1L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><p class=install-note data-install-note=curl>Defaults to <code>~/.local/bin</code>. Set <code>TOTALLY_INSTALL_DIR</code> to install elsewhere, for example <code>TOTALLY_INSTALL_DIR=/usr/local/bin</code>.</p></section></article><script src=/js/install-method.js defer></script></main><footer><div class=container><span>totally_</span>
+<span>Open under the <a class=license-link href="https://github.com/rybkr/totally?tab=MIT-1-ov-file#">MIT License</a></span>
+<a class=footer-github-link href=https://github.com/rybkr/totally aria-label="Totally on GitHub"><img src=/img/github-invertocat.svg alt></a></div></footer></body></html>

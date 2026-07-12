@@ -5,11 +5,7 @@
     {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
     {{ $pages := .RegularPages }}
     {{ if $pages }}
-      <ul class="doc-list">
-        {{ range $pages.ByTitle }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }} <span>→</span></a></li>
-        {{ end }}
-      </ul>
+      <ul class="doc-list">{{ range $pages.ByTitle }}<li><a href="{{ .RelPermalink }}">{{ .Title }} <span>→</span></a></li>{{ end }}</ul>
     {{ else }}
       <p class="empty">Documentation is being written.</p>
     {{ end }}
