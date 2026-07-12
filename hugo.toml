@@ -1,4 +1,5 @@
 baseURL = "https://totally.sh/"
+publishDir = "docs"
 locale = "en-us"
 title = "Totally"
 disableKinds = ["taxonomy"]
