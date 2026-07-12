@@ -17,10 +17,6 @@ disableKinds = ["taxonomy"]
     pageRef = "/docs"
     weight = 10
   [[menus.main]]
-    name = "community"
-    url = "#"
-    weight = 20
-  [[menus.main]]
     name = "GitHub"
     url = "https://github.com/rybkr/totally"
     weight = 30
