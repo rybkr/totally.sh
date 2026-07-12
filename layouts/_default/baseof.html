@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.Params.description }}">
+    <meta name="color-scheme" content="dark">
+    <title>{{ if .IsHome }}{{ site.Title }} — know what your agents did{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="wordmark" href="{{ site.Home.RelPermalink }}" aria-label="Totally home">totally_</a>
+        <nav aria-label="Main navigation">
+          {{ range site.Menus.main }}
+            <a class="{{ if eq .Name "source ↗" }}source-link{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+        </nav>
+      </div>
+    </header>
+    <main>{{ block "main" . }}{{ end }}</main>
+    <footer>
+      <div class="container">
+        <span>totally_</span>
+        <span>local agent usage, made legible.</span>
+      </div>
+    </footer>
+  </body>
+</html>

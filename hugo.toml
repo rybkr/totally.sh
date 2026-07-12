@@ -1,0 +1,21 @@
+baseURL = "https://totally.sh/"
+locale = "en-us"
+title = "Totally"
+disableKinds = ["taxonomy"]
+
+[params]
+  description = "A local CLI for understanding agent sessions."
+
+[menus]
+  [[menus.main]]
+    name = "docs"
+    pageRef = "/docs"
+    weight = 10
+  [[menus.main]]
+    name = "community"
+    url = "#"
+    weight = 20
+  [[menus.main]]
+    name = "source ↗"
+    url = "#"
+    weight = 30

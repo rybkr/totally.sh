@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <section class="page container">
+    <p class="eyebrow">[ {{ .Section }} ]</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    {{ $pages := .RegularPages }}
+    {{ if $pages }}
+      <ul class="doc-list">
+        {{ range $pages.ByTitle }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }} <span>→</span></a></li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <p class="empty">Documentation is being written.</p>
+    {{ end }}
+  </section>
+{{ end }}
