@@ -2,19 +2,37 @@
   <article class="install-page container">
     <header class="install-intro">
       <h1>Install<br><span>Totally.</span></h1>
-      <p>Put Totally on your PATH, then start making agent costs legible.</p>
+      <p>Choose an install method. Totally will be ready on your PATH.</p>
     </header>
-    <section class="install-step" aria-labelledby="install-command-title">
-      <p id="install-command-title">Install with curl</p>
-      <pre><code><span>$</span> curl -fsSL https://totally.sh/install.sh | sh</code></pre>
-    </section>
-    <section class="install-step install-next" aria-labelledby="go-install-command-title">
-      <p id="go-install-command-title">Or install with Go</p>
-      <pre><code><span>$</span> go install github.com/rybkr/totally/cmd/totally@latest</code></pre>
-    </section>
-    <section class="install-step install-next" aria-labelledby="first-command-title">
-      <p id="first-command-title">Then run it</p>
-      <pre><code><span>$</span> totally stats --since 1w --by model</code></pre>
+    <section class="install-picker" aria-label="Installation method">
+      <div class="install-methods" role="tablist" aria-label="Choose an installation method">
+        <button class="install-method is-selected" type="button" role="tab" id="curl-tab" aria-selected="true" aria-controls="curl-panel" data-install-method="curl">
+          <span>curl</span>
+        </button>
+        <button class="install-method" type="button" role="tab" id="go-tab" aria-selected="false" aria-controls="go-panel" tabindex="-1" data-install-method="go">
+          <span>Go</span>
+        </button>
+      </div>
+      <div class="install-command" id="curl-panel" role="tabpanel" aria-labelledby="curl-tab" data-install-panel="curl">
+        <div class="command-row">
+          <pre><code><span>$</span> curl -fsSL https://totally.sh/install.sh | sh</code></pre>
+          <button class="copy-command" type="button" data-copy-command aria-label="Copy curl install command">
+            <svg class="copy-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><rect x="5.25" y="2.25" width="8.5" height="10.5" rx="1" stroke="currentColor" stroke-width="1.25"/><path d="M10.75 13.75H3.5a1.25 1.25 0 0 1-1.25-1.25V5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
+            <svg class="copied-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3 8 3.1 3.1L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="install-command" id="go-panel" role="tabpanel" aria-labelledby="go-tab" data-install-panel="go" hidden>
+        <div class="command-row">
+          <pre><code><span>$</span> go install github.com/rybkr/totally/cmd/totally@latest</code></pre>
+          <button class="copy-command" type="button" data-copy-command aria-label="Copy Go install command">
+            <svg class="copy-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><rect x="5.25" y="2.25" width="8.5" height="10.5" rx="1" stroke="currentColor" stroke-width="1.25"/><path d="M10.75 13.75H3.5a1.25 1.25 0 0 1-1.25-1.25V5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg>
+            <svg class="copied-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m3 8 3.1 3.1L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="install-note" data-install-note="curl">Defaults to <code>~/.local/bin</code>. Set <code>TOTALLY_INSTALL_DIR</code> to install elsewhere, for example <code>TOTALLY_INSTALL_DIR=/usr/local/bin</code>.</p>
     </section>
   </article>
+  <script src="{{ "js/install-method.js" | relURL }}" defer></script>
 {{ end }}
