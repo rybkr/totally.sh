@@ -1,11 +1,12 @@
 {{ define "main" }}
+  {{ $hero := .Params.hero }}
   <section class="hero container" aria-labelledby="hero-title">
-    <h1 id="hero-title">Know what your<br>agents <span>cost.</span></h1>
-    <p class="lede">A local CLI that reads agent sessions, applies your price catalog, and prints a clear estimate.</p>
-    <a class="install-link" href="{{ "install/" | relURL }}">Install <span>→</span></a>
-    <div class="terminal-demo" aria-label="Example Totally command: totally show --latest">
+    <h1 id="hero-title">{{ $hero.title }}<br>{{ $hero.titleLine }} <span>{{ $hero.titleAccent }}</span></h1>
+    <p class="lede">{{ $hero.description }}</p>
+    <a class="install-link" href="{{ "install/" | relURL }}">{{ $hero.cta }} <span>→</span></a>
+    <div class="terminal-demo" aria-label="Example Totally command: {{ $hero.terminalCommand }}">
       <span class="terminal-prompt" aria-hidden="true">$</span>
-      <span class="terminal-command">totally show --latest</span>
+      <span class="terminal-command">{{ $hero.terminalCommand }}</span>
       <span class="terminal-cursor" aria-hidden="true"></span>
     </div>
   </section>
