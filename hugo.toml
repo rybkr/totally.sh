@@ -20,6 +20,6 @@ disableKinds = ["taxonomy"]
     url = "#"
     weight = 20
   [[menus.main]]
-    name = "source ↗"
-    url = "#"
+    name = "GitHub"
+    url = "https://github.com/rybkr/totally"
     weight = 30
